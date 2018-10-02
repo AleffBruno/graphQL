@@ -4,8 +4,10 @@ const schema = require('./schema/schema');
 
 const app = express();
 
-app.use('graphql',graphqlHTTP({
-    schema: schema
+app.use('/graphql',graphqlHTTP({
+    // poderia usar somente 'schema' pois a chave é = o valor
+    schema: schema,
+    graphiql: true
 }));
 
 app.listen(3000,()=>{
